@@ -1,5 +1,9 @@
 # Auto Data Analyst Agent
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
+[![CI](https://github.com/zyf1517142363-cpu/Auto-Data-Analyst-Agent/actions/workflows/ci.yml/badge.svg)](https://github.com/zyf1517142363-cpu/Auto-Data-Analyst-Agent/actions/workflows/ci.yml)
+
 一个基于 LangChain + FastAPI 的数据分析智能体。用户上传 CSV 后，系统会自动完成基础清洗、特征分析、可视化、简单建模，并生成可下载的 PDF 报告。前端页面内输入你的 API Key 即可运行，服务端不会保存 Key。
 
 ## 功能概览
@@ -89,4 +93,4 @@ http://127.0.0.1:8000
 - 模型与可视化为自动化简版流程，适合快速探索与初步分析
 
 ## 许可
-如需商用或定制，请联系作者。
+本项目采用 [MIT License](./LICENSE)。
