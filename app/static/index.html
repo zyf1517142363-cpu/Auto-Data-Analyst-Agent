@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auto Data Analyst Agent</title>
+    <link rel="stylesheet" href="/static/css/styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="hero">
+        <div class="hero__content">
+          <p class="eyebrow">Auto Data Analyst Agent</p>
+          <h1>上传 CSV，一键完成清洗、分析、建模与报告</h1>
+          <p class="subhead">
+            通过 LangChain + FastAPI 构建的智能体，自动生成可下载的 PDF 报告。
+            你的 API Key 仅用于本次请求，不会被存储。
+          </p>
+        </div>
+        <div class="hero__panel">
+          <form id="uploadForm" class="panel">
+            <label class="field">
+              <span>CSV 文件</span>
+              <input type="file" name="file" accept=".csv" required />
+            </label>
+            <label class="field">
+              <span>你的 API Key</span>
+              <input type="password" name="api_key" placeholder="sk-..." required />
+            </label>
+            <label class="field">
+              <span>目标列（可选）</span>
+              <input type="text" name="target" placeholder="例如：sales" />
+            </label>
+            <label class="field">
+              <span>任务类型（可选）</span>
+              <select name="task_type">
+                <option value="">自动判断</option>
+                <option value="classification">分类</option>
+                <option value="regression">回归</option>
+              </select>
+            </label>
+            <button type="submit" class="btn">开始分析</button>
+            <div class="demo">
+              <button type="button" id="demoBtn" class="btn btn--ghost">运行网页演示</button>
+              <a class="link link--muted" href="/static/demo/sample.csv" download>下载示例 CSV</a>
+              <p class="hint">演示模式不需要 API Key，摘要使用规则生成。</p>
+            </div>
+            <p id="status" class="status"></p>
+          </form>
+        </div>
+      </header>
+
+      <section class="results" id="results">
+        <div class="results__card">
+          <h2>分析摘要</h2>
+          <pre id="summary" class="summary">等待分析结果...</pre>
+        </div>
+        <div class="results__card">
+          <h2>报告下载</h2>
+          <a id="reportLink" class="link" href="#" target="_blank" rel="noopener">暂无报告</a>
+        </div>
+      </section>
+    </div>
+
+    <script src="/static/js/app.js"></script>
+  </body>
+</html>
